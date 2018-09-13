@@ -13,7 +13,7 @@ All rule conditions and actions are expressed as regular JavaScript functions so
 
 At 50K (24K minified) vs 577K (227K minified) for Nools, a comparable speed for many applications, plus a low memory impact pattern and join processor, rule-reactor is perfect for memory constrained apps like those on mobile devices.
 
-Some people interested in rules base programming may also be interested in ReasonDB, which provides rule-like capability itegrated with database streaming analytics capability and SQL like JOQULAR syntax:
+Some people interested in rules base programming may also be interested in ReasonDB, which provides rule-like capability integrated with database streaming analytics capability and SQL like JOQULAR syntax:
 
 ```
  // When a new Person is added to the database, print all possible pairs with the Person except itself.
@@ -293,7 +293,7 @@ For code quality assessment purposes, the cyclomatic complexity threshold is set
 
 There is a potential design flaw related to running multiple reactors. When objects are asserted to working memory their constructors are augmented with a member `instances`. The instances persist across reactor creations, i.e. the working memory of reactors is not isolated to a given reactor; hence, creating a new reactory may have rules that fire unexpectedly. It is arguable that the sharing of working memory may be useful in some situations, so the behavior has been left in place. A future release may support a config option when creating a reactors to tell it to used shared or private working memory.
 
-Super classes do not properly check instances of sub-classes. Hence, `forall` and `exists` can't be used to test instances of child classes and other rules will need to match against all child classes with the same conditions using an `||` opertator, e.g. use SubClassA.name==="joe" || SubClassB.name==="joe" rather than Super.name==="joe".
+Super classes do not properly check instances of sub-classes. Hence, `forall` and `exists` can't be used to test instances of child classes and other rules will need to match against all child classes with the same conditions using an `||` operator, e.g. use SubClassA.name==="joe" || SubClassB.name==="joe" rather than Super.name==="joe".
 
 
 # Updates (reverse chronological order)
